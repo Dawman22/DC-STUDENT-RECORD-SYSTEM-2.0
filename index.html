@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Campus Ledger — Student Records</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><div class="brandmark">▦</div><div>Campus Ledger<small>Student information workspace</small></div></div><div class="top-meta">ACADEMIC RECORDS · ARRAY STORAGE<br>APPLICATION DEVELOPMENT LAB</div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">Student records / workspace</div><h1>Student Details Record System</h1><p>Capture, inspect and display student information in one simple workspace.</p></div><div class="capacity"><div class="capacity-label">RECORD CAPACITY</div><div class="capacity-number"><span id="used">0</span><span style="color:#a5afbd"> / 5</span></div><div class="track"><span id="progress"></span></div></div></section>
+<div class="layout">
+<section class="panel"><div class="panel-head"><div class="step"><div class="stepno">01</div><div><h2>Enter student details</h2><p>Complete all five fields to add a record.</p></div></div><span class="tag">Input form</span></div>
+<div class="formbody"><form id="studentForm">
+<div class="field"><label for="roll">Roll number / ID <span>01</span></label><input id="roll" placeholder="e.g. BCA-2024-001" required maxlength="30" /></div>
+<div class="field"><label for="name">Full name <span>02</span></label><input id="name" placeholder="e.g. Rahul Sharma" required maxlength="70" /></div>
+<div class="field"><label for="course">Course / department <span>03</span></label><input id="course" placeholder="e.g. BCA (Cloud Computing)" required maxlength="70" /></div>
+<div class="field"><label for="semester">Semester <span>04</span></label><input id="semester" placeholder="e.g. Semester 4" required maxlength="30" /></div>
+<div class="field"><label for="marks">Marks / grade <span>05</span></label><input id="marks" placeholder="e.g. 88.5% (Grade A+)" required maxlength="30" /></div>
+<div class="actions"><button class="btn primary" type="submit">＋ Store record</button><button class="btn secondary" type="button" id="sampleBtn">Load sample</button><button class="btn secondary" type="button" id="resetBtn">Reset fields</button></div><div class="message" id="message" aria-live="polite"></div>
+</form></div></section>
+<div class="rightcol">
+<section class="panel inspector"><div class="panel-head"><div class="step"><div class="stepno">02</div><div><h2>JavaScript array inspector</h2><p>See how the active form and record list are stored.</p></div></div><span class="tag">Data structure</span></div>
+<div class="codewrap"><div class="codebox"><div class="code-title">CURRENT STUDENT ARRAY <span class="live">● LIVE</span></div><pre id="currentArray">// Active input values appear here
+[]</pre></div><div class="codebox"><div class="code-title">ALL STUDENTS ARRAY <span id="totalLabel">0 / 5</span></div><pre id="allArray">[]</pre></div></div><div class="inspector-foot"><button class="btn danger" type="button" id="clearBtn">Clear all records</button></div></section>
+<section class="panel"><div class="display-head"><div class="step"><div class="stepno">03</div><div><h2>Student record cards</h2><p>Each card is rendered from an array entry.</p></div></div><span class="count" id="displayCount">0 / 5 DISPLAYED</span></div><div class="records" id="records"><div class="empty"><div class="empty-icon">▤</div><h3>No records added yet</h3><p>Enter student details in the form, or use the demo data to see how records appear in this area.</p><button class="btn secondary" type="button" id="demoBtn">Populate 5 demo students</button></div></div></section>
+</div></div>
+<div class="footnote">Campus Ledger · JavaScript Array Storage &amp; DOM Rendering · Academic Application Development</div>
+</main><div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
